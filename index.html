@@ -259,6 +259,153 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/gnn-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Di">
+      <meta itemprop="description" content="只分享，不较量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="獭舍">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/04/gnn-1/" class="post-title-link" itemprop="url">gnn_1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-02-04 21:59:26" itemprop="dateCreated datePublished" datetime="2021-02-04T21:59:26+01:00">2021-02-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>中文退步好大，写blog都费劲了……</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs224w/"><strong>课程主页</strong></a></p>
+<h3 id="Traditional-ML-pipeline"><a href="#Traditional-ML-pipeline" class="headerlink" title="Traditional ML pipeline"></a>Traditional ML pipeline</h3><ol>
+<li>Design features for nodes/links/graphs</li>
+<li>Obtain features of training data</li>
+<li>Train an ML model</li>
+<li>Apply the model</li>
+</ol>
+<h3 id="Traditional-Features"><a href="#Traditional-Features" class="headerlink" title="Traditional Features"></a>Traditional Features</h3><h4 id="Node-level"><a href="#Node-level" class="headerlink" title="Node-level"></a>Node-level</h4><h5 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h5><p>To classify nodes. Useful for predicting influential node in the network.</p>
+<h5 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h5><ul>
+<li><p>Node Degree</p>
+<ul>
+<li>the node’s degree</li>
+<li>treats all neighbouring nodes equally</li>
+<li>limitation: does not capture the importance of the neighbouring nodes</li>
+<li>improvement: Node Centrality</li>
+</ul>
+</li>
+<li><p>Node Centrality</p>
+<ul>
+<li>takes node importance into consideration</li>
+<li>some examples:</li>
+<li>eigenvector centrality: a node is important if it is surrounded by important nodes.</li>
+<li>betweenness centrality: a node is important if it lies on many shortest paths between other nodes.</li>
+<li>closeness centrality: a node is important if it has small shortest path lengths to all other nodes.</li>
+</ul>
+</li>
+<li><p>Clustering Coefficients</p>
+<ul>
+<li>counts the number of triangles that touch the node</li>
+<li>measures the connectivity of the node</li>
+</ul>
+</li>
+<li><p>Graphlets</p>
+<ul>
+<li>counts the number of graphlets that touch the node</li>
+<li>characterizes the topology of the neighbourhood of the node</li>
+</ul>
+</li>
+</ul>
+<h4 id="Link-level"><a href="#Link-level" class="headerlink" title="Link-level"></a>Link-level</h4><h5 id="Tasks-1"><a href="#Tasks-1" class="headerlink" title="Tasks"></a>Tasks</h5><p>To predict new links based on existing links.</p>
+<h5 id="Features-1"><a href="#Features-1" class="headerlink" title="Features"></a>Features</h5><ul>
+<li><p>Distance-based Feature</p>
+<ul>
+<li>measures the shortest-path distance between two nodes</li>
+<li>limitation: does not capture the degree of neighbourhood overlap</li>
+<li>improvement: Local Neighbourhood Overlap</li>
+</ul>
+</li>
+<li><p>Local Neighbourhood Overlap</p>
+<ul>
+<li>some examples:</li>
+<li>number of common neighbours</li>
+<li>Jaccard’s coefficient</li>
+<li>Adamic-Adar index</li>
+<li>limitation: metric is always zero if the number of common neighbours is zero</li>
+<li>improvement: Global Neighbourhood Overlap</li>
+</ul>
+</li>
+<li><p>Global Neighbourhood Overlap</p>
+<ul>
+<li>some examples:</li>
+<li>Katz index: count the number of paths of all lengths between two nodes (using matrix power)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Graph-level"><a href="#Graph-level" class="headerlink" title="Graph-level"></a>Graph-level</h4><h5 id="Tasks-2"><a href="#Tasks-2" class="headerlink" title="Tasks"></a>Tasks</h5><p>To identify similar graphs.</p>
+<h5 id="Features-2"><a href="#Features-2" class="headerlink" title="Features"></a>Features</h5><ul>
+<li>Graph Kernels<ul>
+<li>Graphlet Kernel</li>
+<li>bag of graphlets</li>
+<li>limitation: computationally expensive</li>
+<li>Weisfeiler-Lehman Kernel</li>
+<li>uses color refinement (different from the one used for graph isomorphism) for k hops</li>
+<li>bag of colors</li>
+</ul>
+</li>
+</ul>
+<h3 id="一些待解决的小问题"><a href="#一些待解决的小问题" class="headerlink" title="一些待解决的小问题"></a>一些待解决的小问题</h3><ul>
+<li><input disabled="" type="checkbox"> <p>Random Forest</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>SVM</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>Neural Network</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>off-the-shelf ML model</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/2A2C_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -316,7 +463,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/gnn_1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/summary-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -330,64 +477,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/04/gnn_1/" class="post-title-link" itemprop="url">Graph Neural Network 1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-04 17:39:27" itemprop="dateCreated datePublished" datetime="2021-02-04T17:39:27+01:00">2021-02-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/04/summary_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Di">
-      <meta itemprop="description" content="只分享，不较量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="獭舍">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/04/summary_1/" class="post-title-link" itemprop="url">今日总结</a>
+            <a href="/2021/02/04/summary-1/" class="post-title-link" itemprop="url">今日总结</a>
         </h2>
 
         <div class="post-meta">
